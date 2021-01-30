@@ -122,12 +122,10 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
 }
-.bitton {
-    flex: none
-}
+
 .custom-btn {
     font-size: 8px;
     padding: 3px 5px;
-    margin-top: 28px;
+    margin-top: 22px;
     margin-right: ;
 }
