@@ -29,7 +29,7 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main id="booking-area" class="main-content container">
 
         <div class="booking-content">
             <h1>Mega City Bus</h1>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="input-group">
                     <label" for="">From</label>
-                    <input class="inp-style" type="text" name="" placeholder="Chittagone">
+                    <input class="inp-style" type="text" name="" placeholder="Chittagong">
                 </div>
             </div>
 
@@ -107,9 +107,15 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="booking" class="btn-style">Book Now</button>
         </div>
     </main>
+    <section id="booked-area">
+        <div class="booked">
+            <h1>Thanks for Booking</h1>
+            <h5>Safe ride, Safe journey</h5>
+        </div>
+    </section>
     <script>
          function handleTicket(ticket, isIncrease){
             const ticketInput = document.getElementById(ticket + '-count');
@@ -129,7 +135,6 @@
             if ( ticket == 'economyClass'){
                ticketTotal = ticketNewCount * 100;
             } 
-
             calculateTotal();
         }
 
@@ -144,14 +149,23 @@
             document.getElementById('tax-amount').innerText = '$' + tax;
 
             const grandTotal = totalPrice + tax;
-            document.getElementById('grand-total').innerText = '$' + grandTotal;
-           
+            document.getElementById('grand-total').innerText = '$' + grandTotal;       
         }
         function getInputValue(ticket){
             const ticketInput = document.getElementById(ticket + '-count');
             const ticketCount = parseInt(ticketInput.value);
             return ticketCount;
         }
+
+        // Ticket book handler 
+
+        const bookingBtn = document.getElementById('booking');
+        bookingBtn.addEventListener('click', function () {
+            const bookingArea = document.getElementById("booking-area");
+            bookingArea.style.display = "none";
+            const bookedArea = document.getElementById("booked-area");
+            bookedArea.style.display = "block";
+        })    
     </script>
 
     <!--Thank You-->
